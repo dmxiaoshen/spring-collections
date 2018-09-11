@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:db_users;MODE=MYSQL;INIT=RUNSCRIPT FROM './src/test/resources/init_tables.sql'
+    username:
+    password:
+    driver-class-name: org.h2.Driver
+  redis:
+    port: 6879
+    embedded: true
+
+mybatis:
+  mapper-locations: classpath:/mappers/*Dao.xml
+
+pagehelper:
+  reasonable: true
+  helper-dialect: mysql
+aliyun-oss:
+  enabled: true
+  endpointPublicUrl: https://oss-cn-hangzhou.aliyuncs.com
+  #endpointInternalUrl: https://oss-cn-hangzhou-internal.aliyuncs.com
+  endpointInternalUrl: https://oss-cn-hangzhou.aliyuncs.com
+  accessKeyId: ENC(nI3JsHAYBLE2XN74LVIRIaAABNrMZbO5vr4ckCd50v0=)
+  accessKeySecret: ENC(vb4A4r1qRLc6yap5BhgpL5u/z4w5dHse74UjpvDe84/UUtCuNpN8lw==)
+  bucketName: ENC(0kB8lVGLD95V8AW7silE235VEdiWNOHsBd/EWqgBmlA=)
+  client:
+    maxConnections: 1024
+    maxErrorRetry: 3
+server:
+  port: 8086
+

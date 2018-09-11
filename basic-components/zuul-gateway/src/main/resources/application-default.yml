@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: zuul-api-geteway
+
+# \u6CE8\u610F\u6D4F\u89C8\u5668\u5BF9\u7AEF\u53E3\u7684\u9650\u5236\uFF0C\u6BD4\u5982chrome\u4E2D\uFF0C\u5F88\u591A\u7AEF\u53E3\u59826666-6669\u662F\u4E0D\u80FD\u7528\u7684
+server:
+  port: 1001
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://dmxiaoshen:123@localhost:8888/eureka
+
+# \u5982\u679C\u4E0D\u52A0\u4EE5\u4E0B\u914D\u7F6E\uFF0C\u5219zuul\u6709\u65F6\u5019\u8BBF\u95EE\u4F1Acom.netflix.zuul.exception.ZuulException: Forwarding error
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+#zuul:
+#  routes:
+   # \u670D\u52A1name    \u522B\u540D\u8BBF\u95EE
+#   ft-a: /serviceA/**

@@ -1,0 +1,28 @@
+server:
+  port: 8887
+spring:
+  application:
+    name: spring-clould-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://rep.360taihe.com/fengdai/env.git
+          username: hushengen
+          password: hsg123456
+          default-label: master
+  security:
+    user:
+      name: hushengen
+      password: 123456
+
+encrypt:
+  key: ueuk%33!
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://dmxiaoshen:123@localhost:8888/eureka
+    register-with-eureka: true

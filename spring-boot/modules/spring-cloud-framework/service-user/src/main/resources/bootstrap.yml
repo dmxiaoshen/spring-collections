@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: service-user
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://dmxiaoshen:123@localhost:8888/eureka
+    enabled: false
+    register-with-eureka: false

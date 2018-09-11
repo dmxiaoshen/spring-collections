@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: spring-boot-rabbitmq-example
+  rabbitmq:
+    host: dmxiaoshen.rabbitmq.com
+    port: 6672
+    username: dmxiaoshen
+    password: dmxiaoshen

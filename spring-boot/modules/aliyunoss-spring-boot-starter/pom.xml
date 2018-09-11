@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dmxiaoshen</groupId>
+    <artifactId>aliyunoss-spring-boot-starter</artifactId>
+    <version>${sub-item.version}</version>
+    <packaging>jar</packaging>
+
+    <name>aliyunoss-spring-boot-starter</name>
+    <description>阿里云OSS插件</description>
+
+    <parent>
+        <groupId>com.dmxiaoshen</groupId>
+        <artifactId>boot-parent</artifactId>
+        <version>1.0</version>
+        <relativePath>../../../parent/spring-boot-parent/</relativePath>
+    </parent>
+
+    <properties>
+        <aliyun-sdk-oss.version>2.8.3</aliyun-sdk-oss.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dmxiaoshen</groupId>
+            <artifactId>boot-common</artifactId>
+            <version>${sub-item.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${aliyun-sdk-oss.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <!--这个是为了给注解@ConfigurationProperties标识的类自动生成spring-configuration-metadata.json-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

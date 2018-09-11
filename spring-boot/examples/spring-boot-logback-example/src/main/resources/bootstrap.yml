@@ -1,0 +1,7 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: prd
+  application:
+    name: spring-boot-logback-example

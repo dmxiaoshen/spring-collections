@@ -1,0 +1,11 @@
+# 用本地服务
+service-user.ribbon.listOfServers: localhost:7071
+# 禁用eureka
+ribbon.eureka.enabled: false
+
+ribbon.ReadTimeout: 60000
+ribbon.ConnectTimeout: 60000
+
+spring:
+  jackson:
+   date-format: yyyy-MM-dd HH:mm:ss

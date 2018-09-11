@@ -1,0 +1,33 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: spring-boot-admin
+  mail:
+    host: smtp.qq.com
+    username: hsg@dmxiaoshen.com
+    password: duknlruexpbubbig
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+#  boot:
+#    admin:
+#      notify:
+#        mail:
+#          from: hsg@dmxiaoshen.com
+#          to: dmxiaoshen@163.com
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://dmxiaoshen:123@localhost:8888/eureka
+management:
+  security:
+    enabled: false

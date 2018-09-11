@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <springProperty scope="context" name="logPath" source="logging.path" defaultValue="logs"/>
+    <property name="INFO_LOG_FILE" value="${logPath}/${springAppName}.%d{yyyy-MM-dd}.info.log"/>​
+    <property name="ERROR_LOG_FILE" value="${logPath}/${springAppName}.%d{yyyy-MM-dd}.error.log"/>​
+    <property name="CONSOLE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{id}] %-5level %logger{35} - %msg%n"/>
+    <property name="FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{id}] %-5level %logger{35} - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="INFO_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${INFO_LOG_FILE}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern></pattern>
+            <pattern>${FILE_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="ERROR_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${ERROR_LOG_FILE}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <root level="ERROR">
+        <appender-ref ref="ERROR_APPENDER"/>
+    </root>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="INFO_APPENDER"/>
+    </root>
+
+    <!-- 框架级  additivity="false"  默认是true-->
+    <logger name="druid.sql.Statement" level="DEBUG"/>
+    <logger name="ch.qos.logback" level="ERROR"/>
+    <logger name="com.mysql.jdbc" level="ERROR"/>
+    <logger name="com.netflix" level="WARN"/>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.apache.catalina" level="WARN"/>
+    <logger name="org.quartz" level="WARN"/>
+    <logger name="org.mongodb" level="WARN"/>
+    <logger name="org.mengyun.tcctransaction" level="ERROR"/>
+    <logger name="com.alibaba.druid.sql.SQLUtils" level="OFF" />
+
+    <springProfile name="dev,default">
+        <logger name="com.dmxiaoshen" level="debug"/>
+    </springProfile>
+    <springProfile name="test">
+        <logger name="com.dmxiaoshen" level="info"/>
+    </springProfile>
+    <springProfile name="prd">
+        <logger name="com.dmxiaoshen" level="error"/>
+    </springProfile>
+
+</configuration>
