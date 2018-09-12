@@ -1,0 +1,9 @@
+qiniu:
+  enabled: true
+  accessKey: ENC(hUANvUr/f+oajikf6Qj2bbgPoApih5/5mtP+G/3amfz9gT31flbQaXJTXed9KT5TbNxAvF7/WwE=)
+  secretKey: ENC(wiSI8tDUJg9uoNEMYMY3fxxhR+UlaTCX4zhwMTkycAwaawgfxkvzuGmvWPheuT+yQRjtS/h6NkY=)
+  bucket: spring-boot-qiniu
+  prefixUrl: http://ozjzcix0t.bkt.clouddn.com/
+  expires: 3600
+  policy:
+    mimeLimit: image/jpeg;image/png;application/pdf

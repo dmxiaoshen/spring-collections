@@ -4,39 +4,47 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.dmxiaoshen</groupId>
-	<artifactId>boot-common</artifactId>
+	<artifactId>qiniuyun-spring-boot-starter</artifactId>
 	<version>${sub-item.version}</version>
 	<packaging>jar</packaging>
 
-	<name>boot-common</name>
-	<description>spring boot公共模块</description>
+	<name>qiniuyun-spring-boot-starter</name>
+	<description>七牛云spring boot插件</description>
 
 	<parent>
 		<groupId>com.dmxiaoshen</groupId>
 		<artifactId>spring-boot-parent</artifactId>
 		<version>1.0</version>
-		<relativePath>../spring-boot-parent/</relativePath>
+		<relativePath>../../../parent/spring-boot-parent/</relativePath>
 	</parent>
 
 	<properties>
-		<jasypt.version>2.1.0</jasypt.version>
-		<lombok.version>1.16.20</lombok.version>
+		<qiniu.sdk.version>[7.2.0, 7.2.99]</qiniu.sdk.version>
 	</properties>
 
 	<dependencies>
-		<!--加密配置文件-->
+
 		<dependency>
-			<groupId>com.github.ulisesbocchio</groupId>
-			<artifactId>jasypt-spring-boot-starter</artifactId>
-			<version>${jasypt.version}</version>
+			<groupId>com.dmxiaoshen</groupId>
+			<artifactId>boot-common</artifactId>
+			<version>${sub-item.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-			<!--scope为provided时会被依赖boot-common的项目抛弃-->
-			<!--<scope>provided</scope>-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>${qiniu.sdk.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -48,5 +56,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

@@ -4,6 +4,7 @@ import com.aliyun.oss.model.OSSObject;
 import com.dmxiaoshen.aliyun.oss.support.AliyunOSSSupport;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,6 +22,7 @@ import java.util.Date;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = OSSAutoConfiguration.class)
+@EnableAutoConfiguration
 @PropertySource("classpath:security.properties")
 public class AliyunOssTest {
 
