@@ -33,6 +33,10 @@
         <module>spring-boot/examples/spring-boot-rabbitmq-example</module>
         <module>spring-boot/examples/spring-boot-redis-example</module>
         <module>spring-boot/examples/spring-boot-test-example</module>
+        <module>spring-boot/examples/spring-boot-tcc-transaction-example</module>
+        <module>spring-boot/examples/spring-boot-tx-lcn-example/demo1</module>
+        <module>spring-boot/examples/spring-boot-tx-lcn-example/demo2</module>
+        <module>spring-boot/examples/spring-boot-tx-lcn-example/demo3</module>
         <module>ordinary-project/design-patterns</module>
         <module>ordinary-project/jdk8-characters</module>
         <module>ordinary-project/poi-study</module>

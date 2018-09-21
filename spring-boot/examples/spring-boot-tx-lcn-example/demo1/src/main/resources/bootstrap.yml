@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: demo1
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://dmxiaoshen:123@localhost:8888/eureka
+    enabled: true
+    register-with-eureka: true
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
