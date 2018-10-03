@@ -25,6 +25,7 @@
         <module>spring-boot/modules/spring-boot-activiti6</module>
         <module>spring-boot/modules/spring-boot-standard</module>
         <module>spring-boot/modules/spring-cloud-framework</module>
+        <module>spring-boot/modules/spring-boot-vps</module>
         <module>spring-boot/examples/aliyunoss-spring-boot-starter-example</module>
         <module>spring-boot/examples/qiniuyun-spring-boot-starter-example</module>
         <module>spring-boot/examples/spring-boot-log4j2-example</module>
