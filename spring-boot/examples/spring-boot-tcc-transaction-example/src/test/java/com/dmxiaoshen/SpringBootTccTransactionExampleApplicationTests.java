@@ -2,6 +2,7 @@ package com.dmxiaoshen;
 
 import com.dmxiaoshen.model.User;
 import com.dmxiaoshen.service.UserService;
+import com.dmxiaoshen.util.ApplicationContextUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,18 @@ public class SpringBootTccTransactionExampleApplicationTests {
 			user.setName("kk"+i);
 			userService.addUser(user);
 		}
+	}
+
+	/**
+	 * HikariDataSource (HikariPool-1)
+	 * org.springframework.jdbc.datasource.DataSourceTransactionManager@1f172892
+	 */
+	@Test
+	public void testApplicationContext(){
+		Object dataSource = ApplicationContextUtil.getBean("dataSource");
+		Object transactionManager = ApplicationContextUtil.getBean("transactionManager");
+		System.out.println(dataSource);
+		System.out.println(transactionManager);
 	}
 
 }
